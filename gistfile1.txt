@@ -1,0 +1,169 @@
+import java.util.Scanner;
+
+public class Calculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Choose an operation:");
+            System.out.println("1. Addition");
+            System.out.println("2. Subtraction");
+            System.out.println("3. Multiplication");
+            System.out.println("4. Division");
+            System.out.println("5. Square Root");
+            System.out.println("6. Tan");
+            System.out.println("7. Sin");
+            System.out.println("8. Cos");
+            System.out.println("9. Log");
+            System.out.println("10. Ln");
+            System.out.println("11. Cube Root");
+            System.out.println("0. Exit");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    performAddition();
+                    break;
+                case 2:
+                    performSubtraction();
+                    break;
+                case 3:
+                    performMultiplication();
+                    break;
+                case 4:
+                    performDivision();
+                    break;
+                case 5:
+                    performSquareRoot();
+                    break;
+                case 6:
+                    performTan();
+                    break;
+                case 7:
+                    performSin();
+                    break;
+                case 8:
+                    performCos();
+                    break;
+                case 9:
+                    performLog();
+                    break;
+                case 10:
+                    performLn();
+                    break;
+                case 11:
+                    performCubeRoot();
+                    break;
+                case 0:
+                    System.out.println("Exiting Calculator. Goodbye!");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+
+    private static void performAddition() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the first number:");
+        double num1 = scanner.nextDouble();
+        System.out.println("Enter the second number:");
+        double num2 = scanner.nextDouble();
+        double result = num1 + num2;
+        System.out.println("Result: " + result);
+    }
+
+    private static void performSubtraction() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the first number:");
+        double num1 = scanner.nextDouble();
+        System.out.println("Enter the second number:");
+        double num2 = scanner.nextDouble();
+        double result = num1 - num2;
+        System.out.println("Result: " + result);
+    }
+
+    private static void performMultiplication() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the first number:");
+        double num1 = scanner.nextDouble();
+        System.out.println("Enter the second number:");
+        double num2 = scanner.nextDouble();
+        double result = num1 * num2;
+        System.out.println("Result: " + result);
+    }
+
+    private static void performDivision() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the numerator:");
+        double numerator = scanner.nextDouble();
+        System.out.println("Enter the denominator:");
+        double denominator = scanner.nextDouble();
+
+        if (denominator != 0) {
+            double result = numerator / denominator;
+            System.out.println("Result: " + result);
+        } else {
+            System.out.println("Cannot divide by zero. Please enter a non-zero denominator.");
+        }
+    }
+
+    private static void performSquareRoot() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number:");
+        double num = scanner.nextDouble();
+        double result = Math.sqrt(num);
+        System.out.println("Result: " + result);
+    }
+
+    private static void performTan() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter an angle in radians:");
+        double angle = scanner.nextDouble();
+        double result = Math.tan(angle);
+        System.out.println("Result: " + result);
+    }
+
+    private static void performSin() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter an angle in radians:");
+        double angle = scanner.nextDouble();
+        double result = Math.sin(angle);
+        System.out.println("Result: " + result);
+    }
+
+    private static void performCos() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter an angle in radians:");
+        double angle = scanner.nextDouble();
+        double result = Math.cos(angle);
+        System.out.println("Result: " + result);
+    }
+
+    private static void performLog() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number for logarithm:");
+        double num = scanner.nextDouble();
+        double result = Math.log10(num);
+        System.out.println("Result: " + result);
+    }
+
+    private static void performLn() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number for natural logarithm:");
+        double num = scanner.nextDouble();
+        double result = Math.log(num);
+        System.out.println("Result: " + result);
+    }
+
+    private static void performCubeRoot() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number:");
+        double num = scanner.nextDouble();
+        double result = Math.cbrt(num);
+        System.out.println("Result: " + result);
+    }
+}
